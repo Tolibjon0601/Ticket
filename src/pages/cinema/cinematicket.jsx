@@ -1,3 +1,5 @@
+
+
 const CinemaTicket = () => {
 	return (
 		<div className="flex flex-col mx-auto gap-12 ">
@@ -98,6 +100,7 @@ const CinemaTicket = () => {
 			</div>
 
 </div>
+
 		</div>
 	);
 };

@@ -4,13 +4,13 @@ const ButtonsPage = () => {
   return (
    <div className="flex gap-[180px] justify-center items-center mb-12">
    <div className="flex gap-2">
-    <button className="gap-2 py-[14px] px-8 bg-[#111] rounded-xl font-medium hover:bg-main_color flex">
-     <img src="./image/infinity-icon.svg" alt="infinity icon" />
+    <button className="gap-2 py-[14px] px-8 bg-[#111] rounded-xl font-medium hover:bg-main_color flex ">
+     <img src="./image/infinity-icon.svg" className="hover:bg-white"  alt="infinity icon" />
      Все
     </button>
 
   <button  className="gap-2 py-[14px] px-8 bg-[#111] rounded-xl font-medium hover:bg-main_color flex"  >
-     <img src="./image/movie-icon.svg" alt="movie icon" />
+     <img src="./image/movie-icon.svg" className="hover:bg-white" alt="movie icon" />
      Кино
     </button>
 

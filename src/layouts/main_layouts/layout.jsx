@@ -20,6 +20,8 @@ const MainLayout = () => {
 			{/* {location.pathname !== "/singlepage" && location.pathname !== "/singlepage" && <MainSwiper />} */}
 
 
+			{/* {location.pathname !== "/searchpage" && location.pathname !== "/authPage" && <MainSwiper />}
+			{location.pathname !== "/searchpage" && location.pathname !== "/authPage" && <Footer />} */}
 		</div>
 	);
 };

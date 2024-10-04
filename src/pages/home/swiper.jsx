@@ -24,7 +24,7 @@ function MainSwiper() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-[400px]">
-        <p>Loading...</p>
+        <p>........Loader........</p>
       </div>
     );
   }
@@ -44,7 +44,7 @@ function MainSwiper() {
         navigation
         pagination={{ clickable: true }}
         spaceBetween={20}
-        slidesPerView={4}
+        slidesPerView={3}
         loop={true}
         autoplay={{
           delay: 3000,
@@ -60,7 +60,7 @@ function MainSwiper() {
                 <img
                   src={movie.image}
                   alt={movie.title}
-                  className="w-[280px] h-[400px] rounded-xl mb-2 object-cover"
+                  className="w-[380px] max-h-[200px] rounded-xl mb-2 object-cover"
                 />
                 <h2 className="font-medium text-2xl text-white">
                   {movie.title}
