@@ -55,7 +55,7 @@ function App() {
 					element: <SinglePage />,
 				},
 				{
-					path: "/ticketpage/payment",
+					path: "/ticketpage",
 					element: <PaymentPage />,
 				},
 			],
