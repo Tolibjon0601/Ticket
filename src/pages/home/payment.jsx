@@ -95,3 +95,4 @@ const PaymentPage = ({ closeModal }) => {
 };
 
 export default PaymentPage;
+

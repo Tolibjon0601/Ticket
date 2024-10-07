@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import InputMask from "react-input-mask";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import parsePhoneNumberFromString from "libphonenumber-js";
 import "flag-icons/css/flag-icons.min.css";
+import { toast } from "react-toastify";
+import { useContext } from 'react';
 
+import { AuthContext } from "../context/authcontext/authContext";
 const LoginPage = () => {
 	const [phone, setPhone] = useState("");
 	const [country, setCountry] = useState("");
@@ -20,6 +23,36 @@ const LoginPage = () => {
 			setCountry("");
 		}
 	};
+const {login}=useContext(AuthContext)
+	const submitHandler = (evt) => {
+		evt.preventDefault();
+
+		fetch("https://fakestoreapi.com/auth/login", {
+			method: "POST",
+			body: JSON.stringify({
+				username: "mor_2314",
+				password: "83r5^_",
+			}),
+			headers: {
+				"Content-Type": "Application/json",
+			},
+		})
+			.then((res) => {
+
+			if(res.status>=400){
+				throw new Error("Login qilishda xatolik");
+			}
+				return res.json();
+			})
+			.then((json) => {
+				toast.success("Tizimga muvaffaqiyatli kirildi:")
+login(json.token)
+			})
+			.catch((err) => {
+				toast.error(err.message);
+			});
+	};
+
 	return (
 		<div className="pt-12">
 			<button onClick={() => navigate("/")} className="ml-16 px-4 py-5 bg-swiper_bg rounded-xl">
@@ -30,7 +63,7 @@ const LoginPage = () => {
 				<p className="text-[#777] max-w-[300px] mx-auto mb-8">
 					Введите номер телефона для того чтобы войти или пройти регистрацию
 				</p>
-				<form className="flex flex-col items-center">
+				<form onSubmit={submitHandler} className="flex flex-col items-center">
 					<div className="relative mb-6">
 						{country && (
 							<span
@@ -54,11 +87,12 @@ const LoginPage = () => {
 							)}
 						</InputMask>
 					</div>
-					<Link to="/authPage">
-						<button className="py-4 px-[176px] bg-main_color rounded-xl text-xl mb-6 font-medium">
-							Регистрация
-						</button>
-					</Link>
+					<button
+						type="submit"
+						className="py-4 px-[176px] bg-main_color rounded-xl text-xl mb-6 font-medium"
+					>
+						Регистрация
+					</button>
 				</form>
 				<p className="text-[#777] font-normal text-lg mb-6">или</p>
 				<div className="flex justify-center gap-2">
@@ -77,4 +111,5 @@ const LoginPage = () => {
 		</div>
 	);
 };
+
 export default LoginPage;

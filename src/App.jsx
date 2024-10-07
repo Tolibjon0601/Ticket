@@ -9,10 +9,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./App.css";
 import SinglePage from "./pages/seance/singlepage";
 import CinemaPage from "./pages/cinema/cinemapage";
-import Ticketpage from './pages/cinema/ticketpage';
+import Ticketpage from "./pages/cinema/ticketpage";
 import { Provider } from "react-redux";
 import PaymentPage from "./pages/home/payment";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import AuthContextProvider from "./assets/context/authcontext/authContext";
+import store from "./assets/redux/store";
 
 const queryClient = new QueryClient();
 
@@ -63,9 +67,15 @@ function App() {
 	]);
 
 	return (
-		<QueryClientProvider client={queryClient}>
-			<RouterProvider router={router} />
-		</QueryClientProvider>
+		<Provider store={store}>
+			<AuthContextProvider>
+			<QueryClientProvider client={queryClient}>
+				<ToastContainer />
+
+				<RouterProvider router={router} />
+			</QueryClientProvider>
+		</AuthContextProvider>
+		</Provider>
 	);
 }
 

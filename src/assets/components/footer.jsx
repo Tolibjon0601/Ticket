@@ -1,4 +1,7 @@
+import { useSelector } from "react-redux";
+
 const Footer = () => {
+  const { language } = useSelector((state) => state.language);
   return (
     <div className="flex justify-around pt-[120px]">
       <ul>
