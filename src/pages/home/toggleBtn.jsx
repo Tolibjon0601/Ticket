@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CalendarSwiper from "./date";
 import Detail from "./detail";
-import CinemaPrice from "../cinema/cinemaPrice";
+import CinemaPrice from "../../assets/cinema/cinemaPrice";
 
 const ToggleBtn = () => {
 	const [tab, setTab] = useState(1);

@@ -10,18 +10,14 @@ import "swiper/css/thumbs";
 
 
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import ToggleBtn from "./toggleBtn";
 
 const MySwiper = () => {
 	const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
 	return (
-		<>
+		<div className="relative">
 			<Swiper
-				style={{
-					"--swiper-navigation-color": "red ",
-					"--swiper-pagination-color": "red ",
-				}}
+
 				loop={true}
 				spaceBetween={10}
 				navigation={true}
@@ -64,6 +60,18 @@ const MySwiper = () => {
 				modules={[FreeMode, Navigation, Thumbs]}
 				className="mySwiper"
 			>
+			<img
+        src="./image/arrow-left.svg"
+        alt=""
+        className="swiper-button-prev cursor-pointer "
+        onClick={() => swiperRef.current.swiper.slidePrev()}
+      />
+      <img
+        src="./image/arrow-right.svg"
+        alt=""
+        className="swiper-button-next cursor-pointer mr-auto"
+        onClick={() => swiperRef.current.swiper.slideNext()}
+      />
 				<SwiperSlide>
 					<img src="./image/main_swiperImg.svg" alt="" />
 				</SwiperSlide>
@@ -83,8 +91,39 @@ const MySwiper = () => {
 					/>
 				</SwiperSlide>
 			</Swiper>
-			<ToggleBtn/>
-		</>
+
+
+			<div className="absolute  top-5">
+    <h1 className="mb-4 text-base">Kung Fu Panda 4</h1>
+    <ul className="flex gap-[6px] mb-4">
+        <li>
+            <p className="text-medium text-[14px] text-textcolor">2024</p>
+        </li>
+        <li>
+            <p className="text-medium text-[14px] text-textcolor">•</p>
+        </li>
+        <li>
+            <p className="text-medium text-[14px] text-textcolor">RU</p>
+        </li>
+        <li>
+            <p className="text-medium text-[14px] text-textcolor">•</p>
+        </li>
+        <li>
+            <p className="text-medium text-[14px] text-textcolor">18+</p>
+        </li>
+        <li>
+            <p className="text-medium text-[14px] text-textcolor">•</p>
+        </li>
+        <li>
+            <p className="text-medium text-[14px] text-textcolor">2ч 56м / 176 минут</p>
+        </li>
+    </ul>
+    <button className="py-4 px-[137px] bg-white flex text-main_color text-medium gap-2 rounded-xl">
+        <img src="./image/watch-icon.svg" alt="" />Смотреть
+    </button>
+</div>
+
+		</div>
 	);
 };
 

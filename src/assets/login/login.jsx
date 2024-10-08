@@ -1,17 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import InputMask from "react-input-mask";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import parsePhoneNumberFromString from "libphonenumber-js";
 import "flag-icons/css/flag-icons.min.css";
 import { toast } from "react-toastify";
-import { useContext } from 'react';
 
 import { AuthContext } from "../context/authcontext/authContext";
+
 const LoginPage = () => {
 	const [phone, setPhone] = useState("");
 	const [country, setCountry] = useState("");
 	const navigate = useNavigate();
+	const { login } = useContext(AuthContext);
 
 	const handlePhone = (evt) => {
 		const inputPhoneNumber = evt.target.value;
@@ -23,7 +24,7 @@ const LoginPage = () => {
 			setCountry("");
 		}
 	};
-const {login}=useContext(AuthContext)
+
 	const submitHandler = (evt) => {
 		evt.preventDefault();
 
@@ -34,19 +35,19 @@ const {login}=useContext(AuthContext)
 				password: "83r5^_",
 			}),
 			headers: {
-				"Content-Type": "Application/json",
+				"Content-Type": "application/json",
 			},
 		})
 			.then((res) => {
-
-			if(res.status>=400){
-				throw new Error("Login qilishda xatolik");
-			}
+				if (res.status >= 400) {
+					throw new Error("Login qilishda xatolik");
+				}
 				return res.json();
 			})
 			.then((json) => {
-				toast.success("Tizimga muvaffaqiyatli kirildi:")
-login(json.token)
+				toast.success("Tizimga muvaffaqiyatli kirildi:");
+				login(json.token);
+				navigate('/authpage');
 			})
 			.catch((err) => {
 				toast.error(err.message);

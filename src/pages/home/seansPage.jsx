@@ -58,7 +58,6 @@ const SeansPage = () => {
 						Показать все >
 					</a>
 				</div>
-				<MainSwiper />
 			</div>
 		</div>
 	);

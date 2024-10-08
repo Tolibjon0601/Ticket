@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 function useFetchData(url) {
-  const [data, setData] = useState(null); // Changed to null for single data
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -24,10 +24,10 @@ function useFetchData(url) {
     };
 
     fetchData();
-  }, [url]); // Include url in the dependency array
+  }, [url]);
 
   return {
-    data,   // Changed to data
+    data,
     error,
     loading,
   };
