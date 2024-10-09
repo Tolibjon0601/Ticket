@@ -8,7 +8,6 @@ import { useContext } from "react";
 import { useDispatch } from "react-redux";
 // import { useStore } from "zustand";
 
-
 const Header = () => {
 	const { isLogin, logout } = useContext(AuthContext);
 	const dispatch = useDispatch();
@@ -20,7 +19,6 @@ const Header = () => {
 	// const changeLanguage = (evt) => {
 	// 	setLanguage(evt.target.value);
 	// };
-
 	return (
 		<header className="py-[22px] flex items-center justify-between">
 			<div className="ml-20">
@@ -28,7 +26,6 @@ const Header = () => {
 					<img src="/image/header_logo.svg" alt="Company Logo" />
 				</Link>
 			</div>
-
 			<ul className="flex space-x-4">
 				<li>
 					<Link to="/">
@@ -83,5 +80,4 @@ const Header = () => {
 		</header>
 	);
 };
-
 export default Header;

@@ -5,7 +5,6 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import parsePhoneNumberFromString from "libphonenumber-js";
 import "flag-icons/css/flag-icons.min.css";
 import { toast } from "react-toastify";
-
 import { AuthContext } from "../context/authcontext/authContext";
 
 const LoginPage = () => {
@@ -28,7 +27,13 @@ const LoginPage = () => {
 	const submitHandler = (evt) => {
 		evt.preventDefault();
 
-		fetch("https://fakestoreapi.com/auth/login", {
+
+		if (!phone) {
+			toast.error("Telefon raqamni kiritng:");
+			return;
+		}
+
+		fetch("https://fakestore.com/auth/login", {
 			method: "POST",
 			body: JSON.stringify({
 				username: "mor_2314",
@@ -39,15 +44,15 @@ const LoginPage = () => {
 			},
 		})
 			.then((res) => {
-				if (res.status >= 400) {
+				if (!res.ok) {
 					throw new Error("Login qilishda xatolik");
 				}
 				return res.json();
 			})
 			.then((json) => {
-				toast.success("Tizimga muvaffaqiyatli kirildi:");
+				toast.success("Tizimga muvaffaqiyatli kirildi!");
 				login(json.token);
-				navigate('/authpage');
+				navigate("/authpage");
 			})
 			.catch((err) => {
 				toast.error(err.message);
@@ -69,9 +74,7 @@ const LoginPage = () => {
 						{country && (
 							<span
 								className={`fi fi-${country} absolute left-3 top-1/2 transform -translate-y-1/2 w-7 h-6 rounded-[50%]`}
-								style={{
-									objectFit: "contain",
-								}}
+								style={{ objectFit: "contain" }}
 							></span>
 						)}
 						<InputMask

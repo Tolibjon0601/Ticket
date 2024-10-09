@@ -90,7 +90,7 @@ body{
 .search_input{
   padding-left: 40px;
   background: url('./image/input_icon.svg') no-repeat;
-  background-position: 20px center;
+  background-position: 10px ;
   background-size: 24px;
   width: 300px;
   height: 40px;

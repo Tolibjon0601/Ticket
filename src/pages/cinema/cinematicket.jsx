@@ -157,7 +157,7 @@ const CinemaTicket = () => {
 				)}
 			</div>
 
-			{/* Ticket 4 */}
+
 			<div className="flex p-[6px] items-center gap-5 bg-[#1D1D1D] relative rounded-xl mt-12 min-w-[570px]">
 				<div>
 					<img src="./image/ticket_img4.png" alt="" />

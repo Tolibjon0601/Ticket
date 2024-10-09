@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
-
 let useStore = (set) => {
 	return {
 		tickets: [],
@@ -12,8 +11,6 @@ let useStore = (set) => {
 		addNumber: (number) => set((state) => ({ count: state.count + number })),
 	};
 };
-
 useStore = persist(useStore, { name: "settings" });
 useStore = devtools(useStore);
-
 export default create(useStore);

@@ -21,7 +21,7 @@ const SinglePage = () => {
 		<div className="relative">
 			<div className="flex flex-col items-center mx-auto">
 				<button
-					onClick={() => navigate(-1)}
+					onClick={() => navigate(1)}
 					className="absolute top-12 left-0 ml-16 px-4 py-5 bg-swiper_bg rounded-xl"
 				>
 					<MdOutlineArrowBackIosNew color="red" />

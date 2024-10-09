@@ -29,11 +29,10 @@ const Ticketpage = () => {
 			{tab === 1 ? (
 				<>
 					{" "}
-
-					<CinemaTicket/>{" "}
+					<CinemaTicket />{" "}
 				</>
 			) : (
-		<WatchedCinema/>
+				<WatchedCinema />
 			)}
 		</div>
 	);
