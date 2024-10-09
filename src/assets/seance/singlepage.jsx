@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useFetchData from "../hooks/useFetchData";
-import ToggleBtn from "../../pages/home/toggleBtn";
+import useFetchData from "../../assets/hooks/useFetchData";
+import ToggleBtn from "../home/toggleBtn";
 // import { IoIosArrowBack } from 'react-icons/io';
 
 const SinglePage = () => {

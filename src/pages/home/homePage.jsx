@@ -29,6 +29,7 @@ const MySwiper = () => {
 				thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
 				modules={[FreeMode, Navigation, Thumbs]}
 				className="mySwiper2"
+
 			>
 				<SwiperSlide>
 					<img src="./image/main_swiperImg.svg" alt="" />
@@ -53,12 +54,13 @@ const MySwiper = () => {
 			<Swiper
 				onSwiper={setThumbsSwiper}
 				loop={true}
-				spaceBetween={30}
+				spaceBetween={10}
 				slidesPerView={4}
 				freeMode={true}
 				watchSlidesProgress={true}
 				modules={[FreeMode, Navigation, Thumbs]}
 				className="mySwiper"
+				style={{ width: '50%', height: '120%'}}
 			>
 			<img
         src="./image/arrow-left.svg"
@@ -93,29 +95,29 @@ const MySwiper = () => {
 			</Swiper>
 
 
-			<div className="absolute  top-5">
+			<div className="absolute  top-[430px]">
     <h1 className="mb-4 text-base">Kung Fu Panda 4</h1>
     <ul className="flex gap-[6px] mb-4">
         <li>
-            <p className="text-medium text-[14px] text-textcolor">2024</p>
+            <p className="text-medium text-[16px] ">2024</p>
         </li>
         <li>
-            <p className="text-medium text-[14px] text-textcolor">•</p>
+            <p className="text-medium text-[16px] ">•</p>
         </li>
         <li>
-            <p className="text-medium text-[14px] text-textcolor">RU</p>
+            <p className="text-medium text-[16px] ">RU</p>
         </li>
         <li>
-            <p className="text-medium text-[14px] text-textcolor">•</p>
+            <p className="text-medium text-[16px] ">•</p>
         </li>
         <li>
-            <p className="text-medium text-[14px] text-textcolor">18+</p>
+            <p className="text-medium text-[16px] ">18+</p>
         </li>
         <li>
-            <p className="text-medium text-[14px] text-textcolor">•</p>
+            <p className="text-medium text-[16px] ">•</p>
         </li>
         <li>
-            <p className="text-medium text-[14px] text-textcolor">2ч 56м / 176 минут</p>
+            <p className="text-medium text-[16px] ">2ч 56м / 176 минут</p>
         </li>
     </ul>
     <button className="py-4 px-[137px] bg-white flex text-main_color text-medium gap-2 rounded-xl">

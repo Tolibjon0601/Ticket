@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PaymentPage from "../../pages/home/payment";
+import PaymentPage from "../home/payment";
 import { IoClose } from "react-icons/io5";
 
 const CinemaTicket = () => {

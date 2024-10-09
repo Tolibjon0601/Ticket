@@ -3,6 +3,7 @@ import React from "react";
 const CinemaPrice = () => {
 	return (
 		<div className="flex flex-wrap gap-5">
+
 			<div className="w-[180px] h-[100px] bg-main_bg_color p-3 relative rounded-xl">
 				<div className="flex justify-between">
 					<div>
@@ -11,7 +12,7 @@ const CinemaPrice = () => {
 					</div>
 					<div className="flex items-end gap-2  ">
 						<h1 className="text-white">VIP</h1>
-						<img src="./image/vector.svg" alt="img" className="w-5 h-5" />
+						<img src="/image/vector.svg" alt="img" className="w-5 h-5" />
 					</div>
 				</div>
 				<div className="flex justify-between items-center bg-[#2d2d2d] w-full px-3 py-2  rounded-b-lg absolute bottom-0 left-0">
@@ -27,7 +28,7 @@ const CinemaPrice = () => {
 					</div>
 					<div className="flex items-end gap-2  ">
 						<h1 className="text-white">VIP</h1>
-						<img src="./image/vector.svg" alt="img" className="w-5 h-5" />
+						<img src="/image/vector.svg" alt="img" className="w-5 h-5" />
 					</div>
 				</div>
 				<div className="flex justify-between items-center bg-[#2d2d2d] w-full px-3 py-2  rounded-b-lg absolute bottom-0 left-0">
@@ -43,7 +44,7 @@ const CinemaPrice = () => {
 					</div>
 					<div className="flex items-end gap-2  ">
 						<h1 className="text-white">VIP</h1>
-						<img src="./image/vector.svg" alt="img" className="w-5 h-5" />
+						<img src="/image/vector.svg" alt="img" className="w-5 h-5" />
 					</div>
 				</div>
 				<div className="flex justify-between items-center bg-[#2d2d2d] w-full px-3 py-2  rounded-b-lg absolute bottom-0 left-0">
@@ -59,7 +60,7 @@ const CinemaPrice = () => {
 					</div>
 					<div className="flex items-end gap-2  ">
 						<h1 className="text-white">VIP</h1>
-						<img src="./image/vector.svg" alt="img" className="w-5 h-5" />
+						<img src="/image/vector.svg" alt="img" className="w-5 h-5" />
 					</div>
 				</div>
 				<div className="flex justify-between items-center bg-[#2d2d2d] w-full px-3 py-2  rounded-b-lg absolute bottom-0 left-0">
@@ -75,7 +76,7 @@ const CinemaPrice = () => {
 					</div>
 					<div className="flex items-end gap-2  ">
 						<h1 className="text-white">VIP</h1>
-						<img src="./image/vector.svg" alt="img" className="w-5 h-5" />
+						<img src="/image/vector.svg" alt="img" className="w-5 h-5" />
 					</div>
 				</div>
 				<div className="flex justify-between items-center bg-[#2d2d2d] w-full px-3 py-2  rounded-b-lg absolute bottom-0 left-0">
@@ -91,7 +92,7 @@ const CinemaPrice = () => {
 					</div>
 					<div className="flex items-end gap-2  ">
 						<h1 className="text-white">VIP</h1>
-						<img src="./image/vector.svg" alt="img" className="w-5 h-5" />
+						<img src="/image/vector.svg" alt="img" className="w-5 h-5" />
 					</div>
 				</div>
 				<div className="flex justify-between items-center bg-[#2d2d2d] w-full px-3 py-2  rounded-b-lg absolute bottom-0 left-0">
@@ -107,7 +108,7 @@ const CinemaPrice = () => {
 					</div>
 					<div className="flex items-end gap-2  ">
 						<h1 className="text-white">VIP</h1>
-						<img src="./image/vector.svg" alt="img" className="w-5 h-5" />
+						<img src="/image/vector.svg" alt="img" className="w-5 h-5" />
 					</div>
 				</div>
 				<div className="flex justify-between items-center bg-[#2d2d2d] w-full px-3 py-2  rounded-b-lg absolute bottom-0 left-0">
@@ -123,7 +124,7 @@ const CinemaPrice = () => {
 					</div>
 					<div className="flex items-end gap-2  ">
 						<h1 className="text-white">VIP</h1>
-						<img src="./image/vector.svg" alt="img" className="w-5 h-5" />
+						<img src="/image/vector.svg" alt="img" className="w-5 h-5" />
 					</div>
 				</div>
 				<div className="flex justify-between items-center bg-[#2d2d2d] w-full px-3 py-2  rounded-b-lg absolute bottom-0 left-0">

@@ -59,13 +59,13 @@ function MainSwiper() {
 
 
       <img
-        src="./image/arrow-left.svg"
+        src="/image/arrow-left.svg"
         alt=""
         className="swiper-button-prev cursor-pointer "
         onClick={() => swiperRef.current.swiper.slidePrev()}
       />
       <img
-        src="./image/arrow-right.svg"
+        src="/image/arrow-right.svg"
         alt=""
         className="swiper-button-next cursor-pointer mr-auto"
         onClick={() => swiperRef.current.swiper.slideNext()}

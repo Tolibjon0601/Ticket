@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonsPage from "../../pages/home/buttons";
+import ButtonsPage from "../home/buttons";
 
 const CinemaPage = () => {
 	return (

@@ -5,22 +5,21 @@ import HeaderTicket from "../../icons/header_ticket";
 import HeaderSearch from "../../icons/header_search";
 import { AuthContext } from "../context/authcontext/authContext";
 import { useContext } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+// import { useStore } from "zustand";
+
 
 const Header = () => {
 	const { isLogin, logout } = useContext(AuthContext);
-	const { language } = useSelector((state) => state.language);
 	const dispatch = useDispatch();
+	// const { language, setLanguage } = useStore();
 
 	const location = useLocation();
 	const currentPath = location.pathname;
 
-	const changeLanguage = (evt) => {
-		const selectedLanguage = evt.target.value;
-		dispatch({ type: selectedLanguage });
-
-	};
+	// const changeLanguage = (evt) => {
+	// 	setLanguage(evt.target.value);
+	// };
 
 	return (
 		<header className="py-[22px] flex items-center justify-between">
@@ -61,16 +60,16 @@ const Header = () => {
 			<div className="flex items-center gap-5">
 				<select
 					name="lang"
-					value={language}
-					onChange={changeLanguage}
-					className="py-2 px-4 text-lg rounded-xl  bg-swiper_bg"
+					// value={language}
+					// onChange={changeLanguage}
+					className="py-2 px-4 text-lg rounded-xl bg-swiper_bg"
 				>
-					<option  value="UZ">Uz</option>
-					<option  value="RU">Ru</option>
-					<option  value="EN">En</option>
+					<option value="UZ">Uz</option>
+					<option value="RU">Ru</option>
+					<option value="EN">En</option>
 				</select>
 				{isLogin ? (
-					<button onClick={logout} className="">
+					<button onClick={logout}>
 						<img src="./image/profile-icon.svg" alt="" />
 					</button>
 				) : (
