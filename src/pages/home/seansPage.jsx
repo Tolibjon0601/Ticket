@@ -54,9 +54,9 @@ const SeansPage = () => {
 					<a href="#" className="text-white">
 						На неделе
 					</a>
-					<a className="text-main_color" href="#">
+					<button className="text-main_color" href="#">
 						Показать все >
-					</a>
+					</button>
 				</div>
 			</div>
 		</div>

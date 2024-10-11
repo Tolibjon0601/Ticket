@@ -95,7 +95,7 @@ const MySwiper = () => {
 			</Swiper>
 
 
-			<div className="absolute  top-[430px]">
+			<div className="absolute   top-[430px]">
     <h1 className="mb-4 text-base">Kung Fu Panda 4</h1>
     <ul className="flex gap-[6px] mb-4">
         <li>
