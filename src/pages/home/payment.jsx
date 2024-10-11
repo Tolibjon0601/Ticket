@@ -1,3 +1,4 @@
+// PaymentPage.js
 import React from "react";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +9,7 @@ const PaymentPage = ({ closeModal }) => {
 	return (
 		<div className="fixed inset-0 flex flex-col items-center justify-start bg-black bg-opacity-[0.7] overflow-y-auto max-h-screen">
 			<button
-				onClick={() => navigate(0)}
+				onClick={closeModal} // Modalni yopish uchun closeModal chaqiriladi
 				className="absolute top-4 left-4 ml-16 px-4 py-5 bg-swiper_bg rounded-xl"
 			>
 				<MdOutlineArrowBackIosNew color="red" />
@@ -23,27 +24,13 @@ const PaymentPage = ({ closeModal }) => {
 				<div>
 					<h2 className="text-2xl mb-5">Кунг Фу Панда 4</h2>
 					<ul className="flex gap-[6px] mb-4">
-						<li>
-							<p className="text-medium text-[14px] text-textcolor">2024</p>
-						</li>
-						<li>
-							<p className="text-medium text-[14px] text-textcolor">•</p>
-						</li>
-						<li>
-							<p className="text-medium text-[14px] text-textcolor">RU</p>
-						</li>
-						<li>
-							<p className="text-medium text-[14px] text-textcolor">•</p>
-						</li>
-						<li>
-							<p className="text-medium text-[14px] text-textcolor">6+</p>
-						</li>
-						<li>
-							<p className="text-medium text-[14px] text-textcolor">•</p>
-						</li>
-						<li>
-							<p className="text-medium text-[14px] text-textcolor">1ч 34м / 94 минут</p>
-						</li>
+						<li><p className="text-medium text-[14px] text-textcolor">2024</p></li>
+						<li><p className="text-medium text-[14px] text-textcolor">•</p></li>
+						<li><p className="text-medium text-[14px] text-textcolor">RU</p></li>
+						<li><p className="text-medium text-[14px] text-textcolor">•</p></li>
+						<li><p className="text-medium text-[14px] text-textcolor">6+</p></li>
+						<li><p className="text-medium text-[14px] text-textcolor">•</p></li>
+						<li><p className="text-medium text-[14px] text-textcolor">1ч 34м / 94 минут</p></li>
 					</ul>
 					<p className="text-medium text-[14px] mb-4">Magic Cinema</p>
 					<p className="text-medium text-[14px] mb-4">Зал №1</p>
@@ -95,4 +82,3 @@ const PaymentPage = ({ closeModal }) => {
 };
 
 export default PaymentPage;
-

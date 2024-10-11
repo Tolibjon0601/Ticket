@@ -1,34 +1,65 @@
+// src/components/SinglePage.js
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useFetchData from "../hooks/useFetchData"; // Ma'lumotlarni olish uchun xususiy hook
-import useStore from "../zustand/store"; // Store importi
+import useFetchData from "../../assets/hooks/useFetchData";
+import ToggleBtn from "../home/toggleBtn";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import useStore from "../../zustand"; // Zustand do'konini import qilish
 
 const SinglePage = () => {
-  const { id } = useParams(); // URL dan id olish
-  const navigate = useNavigate(); // Navigatsiya qilish uchun
-  const { data, loading } = useFetchData(
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const setTicket = useStore((state) => state.setTicket);
+
+  const { data, loading, error } = useFetchData(
     `https://66ceca18901aab24841f8da1.mockapi.io/api/ecomerce/${id}`
   );
-
-  const addTicket = useStore((state) => state.addTicket); // Store dan bilet qo'shish funksiyasini olish
 
   if (loading) {
     return <div>...Loading...</div>;
   }
 
-  const handleAddTicket = () => {
-    addTicket(data); // Ma'lumotlar asosida biletni qo'shish
-    navigate('/ticketpage'); // TicketPage ga o'tish
+  const handleBuyClick = () => {
+    setTicket({
+      id: data.id,
+      title: data.title,
+      image: data.image,
+      description: data.description,
+    });
+    navigate('/CinemaTicket'); // CinemaTicket sahifasiga o'tish
   };
 
   return (
-    <div className="flex flex-col w-full h-[640px] items-center mx-auto">
-      <img src={data.image} alt={data.title} />
-      <h1 className="text-4xl mb-6">{data.title}</h1>
-      <p className="text-xl">{data.description}</p>
-      <button onClick={handleAddTicket} className="py-4 px-8 bg-swiper_bg rounded-xl">
-        Bilet qo'shish
-      </button>
+    <div className="relative">
+      <div className="flex flex-col items-center mx-auto">
+        <button
+          onClick={() => navigate(-1)}
+          className="absolute top-12 left-0 ml-16 px-4 py-5 bg-swiper_bg rounded-xl"
+        >
+          <MdOutlineArrowBackIosNew color="red" />
+        </button>
+        <img className=" w-full h-[640px] rounded-3xl" src={data.image} alt="" />
+        <div className="absolute top-[430px] flex flex-col items-center">
+          <h1 className="mb-4 text-4xl font-semibold">{data.title}</h1>
+          <p className="text-xl ">{data.description}</p>
+          <ul className="flex gap-[6px] mb-4 ">
+            <li><p className="text-medium text-[18px] ">2024</p></li>
+            <li><p className="text-medium text-[18px] ">•</p></li>
+            <li><p className="text-medium text-[18px] ">RU</p></li>
+            <li><p className="text-medium text-[18px] ">•</p></li>
+            <li><p className="text-medium text-[18px] ">18+</p></li>
+            <li><p className="text-medium text-[18px] ">•</p></li>
+            <li><p className="text-medium text-[18px] ">2ч 56м / 176 минут</p></li>
+          </ul>
+          <button
+            onClick={handleBuyClick}
+            className="py-4 px-[137px] bg-main_color flex items-center text-medium gap-2 rounded-xl">
+            <img src="/image/buy-icon.svg" alt="" />
+            Смотреть
+          </button>
+        </div>
+      </div>
+      <ToggleBtn />
     </div>
   );
 };
